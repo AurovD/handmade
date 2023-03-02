@@ -6,9 +6,7 @@ import { fetch } from 'src/shared/utils/fetch';
 import { buildServerSideProps } from '../client/ssr/buildServerSideProps';
 import { useFeature } from '../client/hooks/useFeature';
 
-// type THomeProps = {
-//   blogPosts: BlogPost[];
-// };
+
 
 const Home: FC = () => {
   return (
@@ -21,6 +19,10 @@ const Home: FC = () => {
 };
 
 export default Home;
+
+// type THomeProps = {
+//   blogPosts: BlogPost[];
+// };
 
 // const Home: FC<THomeProps> = ({ blogPosts }) => {
 //   const linkFeature = useFeature('blog_link');
@@ -43,12 +45,12 @@ export default Home;
 //     </div>
 //   );
 // };
-
+//
 // export const getServerSideProps = buildServerSideProps<THomeProps | object>(
 //   async () => {
 //     const blogPosts = await fetch('/api/blog-posts');
 //     return { blogPosts };
 //   },
 // );
-
+//
 // export default Home;

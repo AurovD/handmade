@@ -8,6 +8,9 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
 import { UserAuth } from './users/userAuth.model';
+import { RolesModule } from './roles/roles.module';
+import { Role } from "./roles/roles.model";
+import { UserRoles } from "./roles/user-roles.model";
 
 declare const module: any;
 
@@ -43,14 +46,14 @@ export class AppModule {
           username: process.env.DB_USER,
           password: process.env.DB_PASSWORD,
           database: process.env.DB_NAME,
-          models: [UserAuth],
+          models: [UserAuth, Role, UserRoles],
           autoLoadModels: true,
         }),
         UsersModule,
+        RolesModule,
       ],
       controllers: [AppController],
       providers: [AppService],
     };
   }
 }
-
